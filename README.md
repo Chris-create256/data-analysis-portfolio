@@ -1,7 +1,7 @@
 # Local Restaurant Daily Sales & Waste Analysis (Sample Case Study)
 
 ## 1. Business Question
-How do daily revenue, gross margin, and food waste vary across menu items and days of the week—and where can prep quantities be adjusted to cut waste without losing peak-day sales?
+How do daily revenue, gross margin, and food waste vary across menu items and days of the week and where can prep quantities be adjusted to cut waste without losing peak-day sales?
 
 ## 2. Dataset Overview
 - **File:** `daily_sales_sample.csv` (21 records covering 7 days across 3 menu items)
@@ -11,7 +11,7 @@ How do daily revenue, gross margin, and food waste vary across menu items and da
 - **Missing Value Check:** Found 1 missing `portions_sold` entry (`2026-11-04`, Luwombo). Since `prep_cost_ugx` was `120,000 UGX` and standard unit prep cost is `7,500 UGX` (`135,000 / 18`), estimated total prepared portions = `16`, minus `1` wasted portion = **15 portions sold**.
 - **Outlier Check:** Sunday Pilawo recorded `5` wasted portions (18.5% of prepared units), notably higher than the weekday average.
 
-## 4. Key Findings (Cleaned Data)
+## 4. Key Findings 
 | Menu Item | Total Portions Sold | Total Revenue (UGX) | Total Prep Cost (UGX) | Gross Profit (UGX) | Gross Margin | Waste Rate |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Katogo** | 258 | 1,032,000 | 619,200 | 412,800 | 40.0% | 4.8% |
