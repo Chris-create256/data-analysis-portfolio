@@ -73,3 +73,40 @@ print(f"Total Prep Cost (UGX): {total_cost:,}")
 print(f"Total Gross Profit (UGX): {total_profit:,}")
 print(f"Overall Gross Margin: {total_profit / total_rev * 100:.1f}%")
 print(f"Overall Waste Rate: {total_waste / total_prep * 100:.1f}%")
+import matplotlib.pyplot as plt
+
+# 1. Revenue vs. Gross Profit by Menu Item
+x = range(len(summary))
+width = 0.35
+
+plt.figure(figsize=(8, 5))
+plt.bar([i - width / 2 for i in x], summary["revenue_ugx"], width=width, label="Revenue (UGX)")
+plt.bar([i + width / 2 for i in x], summary["gross_profit_ugx"], width=width, label="Gross Profit (UGX)")
+plt.xticks(list(x), summary["item"])
+plt.xlabel("Menu Item")
+plt.ylabel("Amount (UGX)")
+plt.title("Revenue vs. Gross Profit by Menu Item")
+plt.legend()
+plt.tight_layout()
+plt.savefig("revenue_vs_profit.png", dpi=150)
+plt.close()
+
+# 2. Wasted Portions by Day of Week (in calendar order)
+day_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+waste_by_day = (
+    df.groupby("day_of_week", as_index=False)["waste_portions"]
+    .sum()
+    .set_index("day_of_week")
+    .reindex(day_order)
+    .reset_index()
+)
+
+plt.figure(figsize=(8, 5))
+plt.bar(waste_by_day["day_of_week"], waste_by_day["waste_portions"])
+plt.xlabel("Day of Week")
+plt.ylabel("Wasted Portions")
+plt.title("Total Wasted Portions by Day of Week")
+plt.xticks(rotation=25)
+plt.tight_layout()
+plt.savefig("waste_by_day.png", dpi=150)
+plt.close()
