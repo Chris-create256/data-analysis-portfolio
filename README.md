@@ -29,3 +29,5 @@ How do daily revenue, gross margin, and food waste vary across menu items and da
 
 ## 6. Next Steps
 - Add a Python (`pandas` + `matplotlib`) script to automate the cleaning step and generate visual bar charts of daily revenue vs. waste.
+  '![Waste chart](waste_by_day.png)'.
+ '![ Revenue Chart](revenue_vs_profit.png)'.
