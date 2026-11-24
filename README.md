@@ -27,7 +27,6 @@ How do daily revenue, gross margin, and food waste vary across menu items and da
 1. **Reduce Sunday Pilawo and Katogo prep batches by ~15%** to cut end-of-day waste without risking stockouts.
 2. **Enforce end-of-shift log validation** so missing portion counts are flagged before closing.
 
-## 6. Next Steps
-- Add a Python (`pandas` + `matplotlib`) script to automate the cleaning step and generate visual bar charts of daily revenue vs. waste.
+
   '![Waste chart](waste_by_day.png)'.
  '![ Revenue Chart](revenue_vs_profit.png)'.
